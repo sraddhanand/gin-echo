@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  ec_gin:
+    container_name: ecg1
+    image: golang:1.17.6-stretch
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+    ports:
+      - 8090:8080
+    volumes:
+      - ./gin/:/gin/
+volumes:
+  dataVolume:
+
+networks:
+  default: 
+    external: true
+    name: gmr
+
